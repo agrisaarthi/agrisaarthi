@@ -286,6 +286,10 @@ body {
     height: 40px;
   }
 }
+/* Desktop view ke liye toggle hide */
+.menu-toggle {
+  display: none;
+}
 
 /* Footer */
 footer {
@@ -296,5 +300,6 @@ footer {
   font-size: 14px;
   margin-top: 50px;
 }
+
 
 
