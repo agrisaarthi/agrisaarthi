@@ -14,6 +14,13 @@
       color: white;
       cursor: pointer;
       user-select: none;
+      position: absolute;
+      right: 20px;
+      top: 18px;
+    }
+
+    nav ul {
+      transition: all 0.3s ease;
     }
 
     @media (max-width: 768px) {
@@ -69,7 +76,7 @@
       <div class="menu-toggle">&#9776;</div>
 
       <nav>
-        <ul class="hidden md:flex gap-6 items-center text-sm text-gray-300">
+        <ul class="md:flex hidden gap-6 items-center text-sm text-gray-300">
           <li><a href="index.html" class="hover:text-green-400">Home</a></li>
           <li><a href="about.html" class="hover:text-green-400">About Us</a></li>
           <li><a href="products.html" class="text-green-400 font-semibold">Products</a></li>
@@ -120,10 +127,9 @@
   <!-- ===== SCRIPT ===== -->
   <script>
     const menuToggle = document.querySelector('.menu-toggle');
-    const nav = document.querySelector('nav ul');
+    const nav = document.querySelector('nav');
 
     menuToggle.addEventListener('click', () => {
-      nav.classList.toggle('md:flex');
       nav.classList.toggle('active');
     });
   </script>
