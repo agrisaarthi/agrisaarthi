@@ -12,20 +12,66 @@
       background: linear-gradient(to bottom right, #f9fafb, #e0f7fa);
       color: #1f2937;
     }
+
     header {
       background: rgba(0, 0, 0, 0.75);
       backdrop-filter: blur(8px);
     }
+
     header a {
       color: white;
       transition: 0.3s;
     }
+
     header a:hover {
       color: #22d3ee;
     }
+
     .active {
       color: #22d3ee;
       font-weight: 600;
+    }
+
+    /* Hamburger Menu */
+    .menu-toggle {
+      display: none;
+      font-size: 1.8rem;
+      color: white;
+      cursor: pointer;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+        flex-direction: column;
+        background: rgba(0, 0, 0, 0.9);
+        position: absolute;
+        top: 60px;
+        right: 15px;
+        width: 200px;
+        padding: 1rem;
+        border-radius: 10px;
+        text-align: left;
+      }
+
+      nav ul.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      nav ul li a {
+        padding: 10px 0;
+        display: block;
+        color: white;
+      }
     }
 
     /* Popup Styling */
@@ -40,6 +86,7 @@
       justify-content: center;
       z-index: 1000;
     }
+
     .popup-box {
       background: white;
       padding: 25px 35px;
@@ -48,14 +95,17 @@
       box-shadow: 0 5px 25px rgba(0,0,0,0.3);
       animation: fadeIn 0.3s ease;
     }
+
     .popup-box h3 {
       font-size: 20px;
       font-weight: 600;
       margin-bottom: 10px;
     }
+
     .popup-box p {
       font-size: 16px;
     }
+
     @keyframes fadeIn {
       from {opacity: 0; transform: scale(0.9);}
       to {opacity: 1; transform: scale(1);}
@@ -66,16 +116,23 @@
 
   <!-- HEADER -->
   <header class="fixed top-0 left-0 w-full z-50 shadow-md">
-    <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-3">
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-3 relative">
       <a href="index.html" class="flex items-center gap-3">
         <img src="images/LOGO.png" alt="AgriSaarthi logo" class="w-10 h-10 object-contain">
         <h1 class="text-2xl font-bold text-white">AgriSaarthi</h1>
       </a>
-      <nav class="flex gap-6 text-sm font-medium">
-        <a href="index.html" class="hover:text-cyan-300">Home</a>
-        <a href="about.html" class="hover:text-cyan-300">About Us</a>
-        <a href="products.html" class="hover:text-cyan-300">Products</a>
-        <a href="contact.html" class="active">Contact Us</a>
+
+      <!-- Hamburger Icon -->
+      <div class="menu-toggle absolute right-4 top-3">&#9776;</div>
+
+      <!-- Navbar Links -->
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="contact.html" class="active">Contact Us</a></li>
+        </ul>
       </nav>
     </div>
   </header>
@@ -90,10 +147,8 @@
 
     <div class="bg-white/90 rounded-xl shadow-lg p-8">
       <form id="contactForm" action="https://formspree.io/f/meoppvzv" method="POST" class="space-y-5">
-
         <div class="grid md:grid-cols-2 gap-5">
-          <input type="text" name="name" placeholder="Your Name" required 
-            pattern="[A-Za-z\s]+" 
+          <input type="text" name="name" placeholder="Your Name" required pattern="[A-Za-z\s]+"
             title="Name should contain only letters"
             class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 outline-none transition" />
 
@@ -103,36 +158,36 @@
         </div>
 
         <div class="grid md:grid-cols-2 gap-5">
-          <input type="tel" name="phone" placeholder="Your Mobile Number" required 
-            pattern="[0-9]{10}" 
+          <input type="tel" name="phone" placeholder="Your Mobile Number" required pattern="[0-9]{10}"
             title="Enter 10-digit mobile number only"
             class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 outline-none transition" />
 
-          <input type="text" name="village" placeholder="Village" required 
+          <input type="text" name="village" placeholder="Village" required
             class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 outline-none transition" />
         </div>
 
         <div class="grid md:grid-cols-2 gap-5">
-          <input type="text" name="post" placeholder="Post" required 
+          <input type="text" name="post" placeholder="Post" required
             class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 outline-none transition" />
 
-          <input type="text" name="city" placeholder="City" required 
+          <input type="text" name="city" placeholder="City" required
             class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 outline-none transition" />
         </div>
 
         <div class="grid md:grid-cols-2 gap-5">
-          <input type="text" name="state" placeholder="State" required 
+          <input type="text" name="state" placeholder="State" required
             class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 outline-none transition" />
 
-          <input type="text" name="pincode" placeholder="Pincode" required 
-            pattern="[0-9]{6}" title="Enter a valid 6-digit pincode"
+          <input type="text" name="pincode" placeholder="Pincode" required pattern="[0-9]{6}"
+            title="Enter a valid 6-digit pincode"
             class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 outline-none transition" />
         </div>
 
-        <textarea name="message" rows="4" maxlength="300" placeholder="Your Message (Max 300 characters)" required 
+        <textarea name="message" rows="4" maxlength="300" placeholder="Your Message (Max 300 characters)" required
           class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 outline-none transition"></textarea>
 
-        <button type="submit" class="w-full md:w-auto px-8 py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-full font-semibold text-lg transition">
+        <button type="submit"
+          class="w-full md:w-auto px-8 py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-full font-semibold text-lg transition">
           Send Message
         </button>
       </form>
@@ -154,6 +209,12 @@
   </div>
 
   <script>
+    // Hamburger toggle
+    document.querySelector('.menu-toggle').addEventListener('click', () => {
+      document.querySelector('nav ul').classList.toggle('active');
+    });
+
+    // Popup system
     function showPopup(title, message, type) {
       const popup = document.getElementById('popup');
       const popupTitle = document.getElementById('popupTitle');
@@ -168,6 +229,7 @@
       document.getElementById('popup').style.display = 'none';
     }
 
+    // Form duplicate protection
     document.getElementById("contactForm").addEventListener("submit", function(event) {
       const email = document.querySelector("input[name='_replyto']").value.trim();
       const phone = document.querySelector("input[name='phone']").value.trim();
@@ -195,6 +257,5 @@
       showPopup("Success ✅", "Your message has been sent successfully!", "success");
     });
   </script>
-
 </body>
 </html>
