@@ -237,60 +237,6 @@ body {
   flex-wrap: wrap;
   gap: 10px;
 }
-/* ---------- Mobile Compatibility Fix for Header ---------- */
-/* ✅ Responsive Navbar Fix */
-@media (max-width: 768px) {
-  header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 9999;
-  }
-
-  body {
-    padding-top: 70px; /* space below fixed navbar */
-  }
-
-  nav ul {
-    display: none;
-    flex-direction: column;
-    background-color: #0a1a2f;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    width: 100%;
-  }
-
-  nav.active ul {
-    display: flex;
-  }
-
-  .menu-toggle {
-    display: block;
-    cursor: pointer;
-  }
-
-  nav ul li {
-    text-align: center;
-    padding: 12px 0;
-    border-bottom: 1px solid #222;
-  }
-
-  nav ul li a {
-    color: white;
-    font-size: 1.1rem;
-  }
-
-  .logo img {
-    height: 40px;
-  }
-}
-/* Desktop view ke liye toggle hide */
-.menu-toggle {
-  display: none;
-}
-
 /* Footer */
 footer {
   background: #1e293b;
@@ -300,6 +246,7 @@ footer {
   font-size: 14px;
   margin-top: 50px;
 }
+
 
 
 
