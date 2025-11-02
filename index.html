@@ -12,17 +12,21 @@
       background-color: #f9fafb;
       scroll-behavior: smooth;
     }
+
     header {
-      background: rgba(0, 0, 0, 0.75);
-      backdrop-filter: blur(8px);
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(10px);
     }
+
     header a {
       color: white;
       transition: 0.3s;
     }
+
     header a:hover {
       color: #22d3ee;
     }
+
     .hero video {
       position: absolute;
       top: 0;
@@ -31,40 +35,94 @@
       height: 100%;
       object-fit: cover;
       z-index: -1;
-      opacity: 0.9;
+      opacity: 0.85;
     }
+
     .product-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 10px 25px rgba(0,0,0,0.15);
     }
+
+    /* ===== MOBILE MENU ===== */
+    .menu-toggle {
+      display: none;
+      font-size: 30px;
+      color: white;
+      cursor: pointer;
+      user-select: none;
+      position: absolute;
+      right: 20px;
+      top: 18px;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+        background: #111;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 100%;
+        display: none;
+        padding: 15px 0;
+        border-top: 2px solid #333;
+      }
+
+      nav.active ul {
+        display: flex;
+        animation: slideDown 0.3s ease forwards;
+      }
+
+      nav ul li {
+        margin: 12px 0;
+      }
+
+      nav ul li a {
+        font-size: 18px;
+        display: block;
+      }
+
+      @keyframes slideDown {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+    }
   </style>
 </head>
+
 <body class="text-gray-900">
 
-  <!-- HEADER -->
+  <!-- ===== HEADER ===== -->
   <header class="fixed top-0 left-0 w-full z-50 shadow-md">
     <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-3 relative">
-      <!-- Logo + Name -->
       <a href="index.html" class="flex items-center gap-3">
         <img src="images/LOGO.png" alt="AgriSaarthi logo" class="w-10 h-10 object-contain">
         <h1 class="text-2xl font-bold text-white">AgriSaarthi</h1>
       </a>
 
-      <!-- Navbar -->
-      <nav class="flex gap-6 text-sm font-medium relative">
-        <a href="index.html" class="text-cyan-300">Home</a>
-        <a href="about.html">About us</a>
-        <a href="#products">Products</a>
-        <a href="contact.html">Contact Us</a>
+      <div class="menu-toggle">&#9776;</div>
+
+      <nav>
+        <ul class="md:flex hidden gap-6 text-sm font-medium">
+          <li><a href="index.html" class="text-cyan-300 font-semibold">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
       </nav>
     </div>
   </header>
 
-  <!-- HERO SECTION -->
+  <!-- ===== HERO SECTION ===== -->
   <section class="hero relative h-[90vh] flex flex-col items-center justify-center text-center text-white">
-    <video id="heroVideo" autoplay muted playsinline>
-      <source src="videos/Hand Rotavator.mp4" type="video/mp4">
+    <video autoplay muted loop playsinline>
       <source src="videos/AI Smart Rotavator.mp4" type="video/mp4">
+      <source src="videos/Hand Rotavator.mp4" type="video/mp4">
     </video>
     <div class="bg-black/50 absolute inset-0"></div>
 
@@ -74,13 +132,13 @@
         Reduce fuel, increase yield — durable and cost-effective solutions under ₹2,00,000 for Indian farmers.
       </p>
       <div class="flex gap-4 justify-center">
-        <a href="#products" class="bg-cyan-600 hover:bg-cyan-700 px-6 py-3 rounded-full text-white text-lg transition">See Products</a>
+        <a href="products.html" class="bg-cyan-600 hover:bg-cyan-700 px-6 py-3 rounded-full text-white text-lg transition">See Products</a>
         <a href="contact.html" class="bg-emerald-600 hover:bg-emerald-700 px-6 py-3 rounded-full text-white text-lg transition">Contact Sales</a>
       </div>
     </div>
   </section>
 
-  <!-- OUR PRODUCTS -->
+  <!-- ===== OUR PRODUCTS ===== -->
   <section id="products" class="py-16 bg-gradient-to-b from-white to-gray-100">
     <div class="max-w-6xl mx-auto text-center px-6">
       <h3 class="text-3xl font-bold mb-10">Our Products</h3>
@@ -106,7 +164,7 @@
     </div>
   </section>
 
-  <!-- WHY AGRISAARTHI -->
+  <!-- ===== WHY AGRISAARTHI ===== -->
   <section class="py-16 bg-white">
     <div class="max-w-6xl mx-auto text-center px-6">
       <h3 class="text-3xl font-bold mb-10">Why AgriSaarthi?</h3>
@@ -131,20 +189,34 @@
     </div>
   </section>
 
-  <!-- GET IN TOUCH -->
-<section class="py-16 bg-gradient-to-b from-gray-100 to-white text-center">
-  <div class="max-w-4xl mx-auto px-6">
-    <h3 class="text-3xl font-bold mb-6">Get in Touch</h3>
-    <p class="text-gray-700 mb-6 text-lg">
-      Have any questions or want to know more about our products?  
-      We’d love to hear from you — hum hamesha aapki madad ke liye ready hain! 🌾
-    </p>
-    <a href="contact.html" class="inline-block bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-3 rounded-full font-semibold text-lg transition">
-      Contact Us
-    </a>
-  </div>
-</section>
-<!-- FOOTER -->
-<footer class="bg-gray-900 text-gray-400 py-6 text-center text-sm">
-  © 2025 AgriSaarthi | Built with ❤️ for Indian Farmers
-</footer>
+  <!-- ===== GET IN TOUCH ===== -->
+  <section class="py-16 bg-gradient-to-b from-gray-100 to-white text-center">
+    <div class="max-w-4xl mx-auto px-6">
+      <h3 class="text-3xl font-bold mb-6">Get in Touch</h3>
+      <p class="text-gray-700 mb-6 text-lg">
+        Have any questions or want to know more about our products?  
+        We’d love to hear from you — hum hamesha aapki madad ke liye ready hain! 🌾
+      </p>
+      <a href="contact.html" class="inline-block bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-3 rounded-full font-semibold text-lg transition">
+        Contact Us
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="bg-gray-900 text-gray-400 py-6 text-center text-sm">
+    © 2025 AgriSaarthi | Built with ❤️ for Indian Farmers
+  </footer>
+
+  <!-- ===== SCRIPT ===== -->
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('nav');
+
+    menuToggle.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
+  </script>
+
+</body>
+</html>
