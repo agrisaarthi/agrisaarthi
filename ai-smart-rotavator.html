@@ -10,17 +10,56 @@
       font-family: 'Poppins', sans-serif;
       background-color: #f9fafb;
     }
+
     header {
-      background: rgba(0, 0, 0, 0.8);
+      background: rgba(0, 0, 0, 0.85);
       backdrop-filter: blur(8px);
     }
+
     header a {
       color: white;
       transition: 0.3s;
     }
+
     header a:hover {
       color: #22d3ee;
     }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.8rem;
+      color: white;
+      cursor: pointer;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+        flex-direction: column;
+        background: rgba(0, 0, 0, 0.9);
+        position: absolute;
+        top: 60px;
+        right: 15px;
+        width: 200px;
+        padding: 1rem;
+        border-radius: 10px;
+        text-align: left;
+      }
+
+      nav ul.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+
     .hero video {
       position: absolute;
       top: 0;
@@ -37,20 +76,23 @@
 
   <!-- HEADER -->
   <header class="fixed top-0 left-0 w-full z-50 shadow-md">
-    <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-3">
-
-      <!-- LOGO + BRAND NAME -->
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-3 relative">
+      
+      <!-- LOGO + NAME -->
       <div class="flex items-center gap-3">
         <img src="images/LOGO.png" alt="AgriSaarthi Logo" class="w-10 h-10 rounded-full shadow-md">
         <h1 class="text-2xl font-bold text-white">AgriSaarthi</h1>
       </div>
 
-      <!-- NAVIGATION LINKS -->
-      <nav class="flex gap-6 text-sm font-medium">
-        <a href="index.html">Home</a>
-        <a href="about.html">About Us</a>
-        <a href="hand-rotavator.html">Hand Rotavator</a>
-        <a href="contact.html">Contact Us</a>
+      <!-- NAVIGATION -->
+      <nav>
+        <div class="menu-toggle absolute right-4 top-3">&#9776;</div>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="hand-rotavator.html">Hand Rotavator</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
       </nav>
     </div>
   </header>
@@ -74,11 +116,7 @@
   <!-- PRODUCT DETAILS -->
   <section id="details" class="py-16 bg-gradient-to-b from-white to-gray-100">
     <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center px-6">
-
-      <!-- IMAGE -->
       <img src="images/AI Smart Rotavator.jpg" alt="AI Smart Rotavator" class="rounded-xl shadow-lg hover:scale-105 transition duration-500">
-      
-      <!-- TEXT DETAILS -->
       <div>
         <h3 class="text-3xl font-semibold mb-4 text-gray-800">Product Specifications</h3>
         <ul class="list-disc list-inside text-gray-700 space-y-1 mb-6">
@@ -89,7 +127,6 @@
           <li>Power: Front drive, dual-direction rotation</li>
           <li>Price Range: ₹1,50,000 – ₹1,80,000</li>
         </ul>
-
         <a href="contact.html" class="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 rounded-full transition">Contact Sales</a>
       </div>
     </div>
@@ -120,6 +157,16 @@
   <footer class="text-center py-5 bg-gray-900 text-gray-300">
     © 2025 AgriSaarthi | Built with ❤️ for Indian Farmers
   </footer>
+
+  <script>
+    // Mobile menu toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const menu = document.querySelector('nav ul');
+
+    menuToggle.addEventListener('click', () => {
+      menu.classList.toggle('active');
+    });
+  </script>
 
 </body>
 </html>
