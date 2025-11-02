@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hand Rotavator — AgriSaarthi</title>
+  <title>AgriSaarthi — Smart Farming for India</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     body {
@@ -48,7 +48,6 @@
         width: 200px;
         padding: 1rem;
         border-radius: 10px;
-        text-align: left;
       }
 
       nav ul.active {
@@ -90,7 +89,7 @@
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About Us</a></li>
-          <li><a href="ai-smart-rotavator.html">AI Smart Rotavator</a></li>
+          <li><a href="product.html">Products</a></li>
           <li><a href="contact.html">Contact Us</a></li>
         </ul>
       </nav>
@@ -98,56 +97,51 @@
   </header>
 
   <!-- HERO SECTION -->
-  <section class="hero relative h-[85vh] flex items-center justify-center text-center text-white">
+  <section class="hero relative h-[90vh] flex items-center justify-center text-center text-white">
     <video autoplay muted loop playsinline>
       <source src="videos/Hand Rotavator.mp4" type="video/mp4">
+      <source src="videos/AI Smart Rotavator.mp4" type="video/mp4">
     </video>
-    <div class="bg-black/50 absolute inset-0"></div>
+    <div class="bg-black/60 absolute inset-0"></div>
 
     <div class="z-10 px-4">
-      <h2 class="text-4xl md:text-5xl font-bold mb-4">Hand Rotavator</h2>
+      <h2 class="text-5xl md:text-6xl font-bold mb-4">Welcome to AgriSaarthi</h2>
       <p class="text-lg md:text-xl mb-6 max-w-2xl mx-auto">
-        Affordable, manual, and durable farming solution — designed to make small-scale soil tilling effortless and eco-friendly.
+        Revolutionizing Indian agriculture with AI-powered, affordable, and farmer-friendly smart equipment.
       </p>
-      <a href="#details" class="bg-cyan-600 hover:bg-cyan-700 px-6 py-3 rounded-full text-white text-lg transition">Explore Details</a>
+      <a href="product.html" class="bg-cyan-600 hover:bg-cyan-700 px-8 py-3 rounded-full text-white text-lg transition">Explore Products</a>
     </div>
   </section>
 
-  <!-- PRODUCT DETAILS -->
-  <section id="details" class="py-16 bg-gradient-to-b from-white to-gray-100">
-    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center px-6">
-      <img src="images/Hand Rotavator.jpg" alt="Hand Rotavator" class="rounded-xl shadow-lg hover:scale-105 transition duration-500">
-      <div>
-        <h3 class="text-3xl font-semibold mb-4 text-gray-800">Product Specifications</h3>
-        <ul class="list-disc list-inside text-gray-700 space-y-1 mb-6">
-          <li>Weight: 18 kg</li>
-          <li>Material: Heavy-duty carbon steel</li>
-          <li>Width: 16 inches adjustable blades</li>
-          <li>Grip: Anti-slip ergonomic handle</li>
-          <li>Maintenance: Low, easy-clean design</li>
-          <li>Price Range: ₹90,000 – ₹1,20,000</li>
-        </ul>
-        <a href="contact.html" class="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 rounded-full transition">Contact Sales</a>
-      </div>
+  <!-- ABOUT SECTION -->
+  <section class="py-16 bg-gradient-to-b from-white to-gray-100">
+    <div class="max-w-6xl mx-auto text-center px-6">
+      <h3 class="text-3xl font-bold mb-4">Empowering Farmers with Innovation</h3>
+      <p class="text-gray-700 max-w-3xl mx-auto mb-10">
+        AgriSaarthi combines artificial intelligence, data insights, and durable engineering to help farmers save time, reduce costs, and increase productivity. 
+        Our AI Smart Rotavator and Hand Rotavator are built for efficiency and sustainability in Indian conditions.
+      </p>
+      <img src="images/farm.jpg" alt="AgriSaarthi Farm" class="rounded-xl shadow-lg mx-auto w-full md:w-3/4 hover:scale-105 transition duration-500">
     </div>
   </section>
 
-  <!-- WHY CHOOSE SECTION -->
+  <!-- PRODUCT HIGHLIGHT SECTION -->
   <section class="py-16 bg-white">
     <div class="max-w-6xl mx-auto text-center px-6">
-      <h3 class="text-3xl font-bold mb-8">Why Choose Hand Rotavator?</h3>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="p-6 rounded-xl bg-gray-50 shadow hover:shadow-md transition">
-          <h4 class="text-xl font-semibold text-cyan-700 mb-2">Eco-Friendly</h4>
-          <p>No fuel required — purely manual design reduces emissions and costs.</p>
+      <h3 class="text-3xl font-bold mb-8">Our Key Innovations</h3>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="p-6 bg-gray-50 rounded-xl shadow hover:shadow-md transition">
+          <img src="images/AI Smart Rotavator.jpg" class="rounded-lg mb-4 w-full h-64 object-cover">
+          <h4 class="text-xl font-semibold mb-2 text-cyan-700">AI Smart Rotavator</h4>
+          <p>AI-enabled soil tiller controllable via app — boosting efficiency and precision farming.</p>
+          <a href="ai-smart-rotavator.html" class="inline-block mt-4 text-cyan-600 hover:underline">View Details →</a>
         </div>
-        <div class="p-6 rounded-xl bg-gray-50 shadow hover:shadow-md transition">
-          <h4 class="text-xl font-semibold text-cyan-700 mb-2">Rugged & Reliable</h4>
-          <p>Built to handle Indian soil conditions and last for years with minimal maintenance.</p>
-        </div>
-        <div class="p-6 rounded-xl bg-gray-50 shadow hover:shadow-md transition">
-          <h4 class="text-xl font-semibold text-cyan-700 mb-2">Farmer Friendly</h4>
-          <p>Lightweight yet sturdy — perfect for small and marginal farmers.</p>
+
+        <div class="p-6 bg-gray-50 rounded-xl shadow hover:shadow-md transition">
+          <img src="images/Hand Rotavator.jpg" class="rounded-lg mb-4 w-full h-64 object-cover">
+          <h4 class="text-xl font-semibold mb-2 text-cyan-700">Hand Rotavator</h4>
+          <p>Manual and durable farming tool designed for small-scale and eco-friendly cultivation.</p>
+          <a href="hand-rotavator.html" class="inline-block mt-4 text-cyan-600 hover:underline">View Details →</a>
         </div>
       </div>
     </div>
@@ -167,6 +161,5 @@
       menu.classList.toggle('active');
     });
   </script>
-
 </body>
 </html>
