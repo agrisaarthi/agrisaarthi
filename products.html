@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Products — AgriSaarthi</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="bg-gradient-to-b from-green-50 to-green-100 font-sans text-gray-900">
+
+  <!-- Header -->
+  <header class="bg-gray-900 shadow-sm sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="images/LOGO.png" alt="AgriSaarthi logo" class="w-10 h-10 object-contain">
+        <span class="font-semibold text-lg text-white">AgriSaarthi</span>
+      </a>
+
+      <nav class="hidden md:flex gap-6 items-center text-sm text-gray-300">
+        <a href="index.html" class="hover:text-green-400">Home</a>
+        <a href="about.html" class="hover:text-green-400">About Us</a>
+        <a href="products.html" class="text-green-400 font-semibold">Products</a>
+        <a href="contact.html" class="hover:text-green-400">Contact Us</a>
+      </nav>
+
+      <button id="mobileToggle" class="md:hidden text-white text-2xl">☰</button>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-6xl mx-auto px-4 py-12">
+    <h1 class="text-3xl font-extrabold text-center mb-10 text-gray-800">Our Products</h1>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+      <!-- Hand Rotavator -->
+      <div class="relative group overflow-hidden rounded-lg shadow-lg bg-white hover:shadow-2xl transition-all">
+        <img src="images/Hand Rotavator.jpg" alt="Hand Rotavator" class="w-full h-56 object-cover group-hover:scale-105 duration-500">
+        <div class="p-5">
+          <h3 class="font-semibold text-lg text-gray-800">Hand Rotavator</h3>
+          <p class="text-sm text-gray-600 mt-2">Manual, lightweight rotavator designed to reduce effort and improve soil aeration for small farms.</p>
+          <div class="mt-4">
+            <a href="hand-rotavator.html" class="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700">View Details</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- AI Smart Rotavator -->
+      <div class="relative group overflow-hidden rounded-lg shadow-lg bg-white hover:shadow-2xl transition-all">
+        <img src="images/AI Smart Rotavator.jpg" alt="AI Smart Rotavator" class="w-full h-56 object-cover group-hover:scale-105 duration-500">
+        <div class="p-5">
+          <h3 class="font-semibold text-lg text-gray-800">AI Smart Rotavator</h3>
+          <p class="text-sm text-gray-600 mt-2">AI-powered tilling machine with real-time soil sensing, app control, wireless remote control, and improved fuel efficiency.</p>
+          <div class="mt-4">
+            <a href="ai-smart-rotavator.html" class="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700">View Details</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-300 border-t border-gray-700 mt-12">
+    <div class="max-w-6xl mx-auto px-4 py-6 text-center text-sm">
+      © 2025 AgriSaarthi — Empowering Farmers with AI 🌾
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

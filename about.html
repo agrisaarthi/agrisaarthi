@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About — AgriSaarthi</title>
+  <link rel="icon" href="images/logo.png" type="image/png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom right, #f9fafb, #e0f7fa);
+      color: #1f2937;
+    }
+    header {
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(8px);
+    }
+    header a {
+      color: white;
+      transition: 0.3s;
+    }
+    header a:hover {
+      color: #22d3ee;
+    }
+    .active {
+      color: #22d3ee;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="fixed top-0 left-0 w-full z-50 shadow-md">
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-3">
+      <!-- Logo + Name -->
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="images/logo.png" alt="AgriSaarthi logo" class="w-10 h-10 object-contain">
+        <h1 class="text-2xl font-bold text-white">AgriSaarthi</h1>
+      </a>
+
+      <!-- Navbar -->
+      <nav class="flex gap-6 text-sm font-medium">
+        <a href="index.html" class="hover:text-cyan-300">Home</a>
+        <a href="about.html" class="active">About Us</a>
+        <a href="products.html" class="hover:text-cyan-300">Products</a>
+        <a href="contact.html" class="hover:text-cyan-300">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ABOUT CONTENT -->
+  <main class="max-w-5xl mx-auto px-6 pt-32 pb-16">
+    <h1 class="text-4xl font-extrabold mb-6 text-center text-emerald-700">About AgriSaarthi</h1>
+    <p class="text-gray-700 leading-relaxed text-lg mb-6 text-center max-w-3xl mx-auto">
+      AgriSaarthi is a farmer-first startup focused on creating <strong>affordable, AI-powered farming equipment</strong> 
+      that simplifies fieldwork while improving yield. We believe that technology should empower every Indian farmer — 
+      not complicate their life.
+    </p>
+
+    <div class="bg-white/80 p-6 rounded-xl shadow-md mt-8">
+      <h2 class="text-2xl font-semibold text-cyan-700 mb-3">Our Mission</h2>
+      <p class="text-gray-700">
+        To democratize smart farming by building high-quality, low-cost, and AI-integrated machines that can reach 
+        even the remotest villages. We aim to enhance productivity, reduce input costs, and promote sustainable agriculture.
+      </p>
+    </div>
+
+    <div class="bg-white/80 p-6 rounded-xl shadow-md mt-8">
+      <h2 class="text-2xl font-semibold text-emerald-700 mb-3">Our Team</h2>
+      <div class="grid sm:grid-cols-2 gap-6 mt-4">
+        <div class="bg-gray-50 p-4 rounded-lg shadow hover:shadow-md transition">
+          <h3 class="font-semibold text-lg text-gray-800">Abhay Singh</h3>
+          <p class="text-sm text-gray-600">Founder & AI Engineer</p>
+          <p class="text-sm text-gray-600">agrisaarthiai@gmail.com</p>
+        </div>
+        <div class="bg-gray-50 p-4 rounded-lg shadow hover:shadow-md transition">
+          <h3 class="font-semibold text-lg text-gray-800">Piyush Kumar</h3>
+          <p class="text-sm text-gray-600">Co-founder & Product Developer</p>
+          <p class="text-sm text-gray-600">agrisaarthi.cofounder@gmail.com</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="text-center py-6 bg-gray-900 text-gray-300">
+    © 2025 AgriSaarthi | Empowering Farmers with AI 🌾
+  </footer>
+
+</body>
+</html>

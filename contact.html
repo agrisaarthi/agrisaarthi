@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact — AgriSaarthi</title>
+  <link rel="icon" href="images/LOGO.png" type="image/png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom right, #f9fafb, #e0f7fa);
+      color: #1f2937;
+    }
+    header {
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(8px);
+    }
+    header a {
+      color: white;
+      transition: 0.3s;
+    }
+    header a:hover {
+      color: #22d3ee;
+    }
+    .active {
+      color: #22d3ee;
+      font-weight: 600;
+    }
+
+    /* Popup Styling */
+    .popup-overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5);
+      backdrop-filter: blur(3px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+    .popup-box {
+      background: white;
+      padding: 25px 35px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.3);
+      animation: fadeIn 0.3s ease;
+    }
+    .popup-box h3 {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .popup-box p {
+      font-size: 16px;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0; transform: scale(0.9);}
+      to {opacity: 1; transform: scale(1);}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="fixed top-0 left-0 w-full z-50 shadow-md">
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-3">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="images/LOGO.png" alt="AgriSaarthi logo" class="w-10 h-10 object-contain">
+        <h1 class="text-2xl font-bold text-white">AgriSaarthi</h1>
+      </a>
+      <nav class="flex gap-6 text-sm font-medium">
+        <a href="index.html" class="hover:text-cyan-300">Home</a>
+        <a href="about.html" class="hover:text-cyan-300">About Us</a>
+        <a href="products.html" class="hover:text-cyan-300">Products</a>
+        <a href="contact.html" class="active">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- CONTACT FORM -->
+  <main id="contact" class="max-w-4xl mx-auto px-6 pt-32 pb-16">
+    <h1 class="text-4xl font-extrabold mb-6 text-center text-emerald-700">Get in Touch</h1>
+    <p class="text-gray-700 mb-8 text-center max-w-2xl mx-auto text-lg">
+      Interested in a demo, partnership, or bulk purchase?  
+      Fill out this form — our team will contact you shortly!
+    </p>
+
+    <div class="bg-white/90 rounded-xl shadow-lg p-8">
+      <form id="contactForm" action="https://formspree.io/f/meoppvzv" method="POST" class="space-y-5">
+
+        <div class="grid md:grid-cols-2 gap-5">
+          <input type="text" name="name" placeholder="Your Name" required 
+            pattern="[A-Za-z\s]+" 
+            title="Name should contain only letters"
+            class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 outline-none transition" />
+
+          <input type="email" name="_replyto" placeholder="Your Email" required
+            title="Please enter a valid email"
+            class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 outline-none transition" />
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-5">
+          <input type="tel" name="phone" placeholder="Your Mobile Number" required 
+            pattern="[0-9]{10}" 
+            title="Enter 10-digit mobile number only"
+            class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 outline-none transition" />
+
+          <input type="text" name="village" placeholder="Village" required 
+            class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 outline-none transition" />
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-5">
+          <input type="text" name="post" placeholder="Post" required 
+            class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 outline-none transition" />
+
+          <input type="text" name="city" placeholder="City" required 
+            class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 outline-none transition" />
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-5">
+          <input type="text" name="state" placeholder="State" required 
+            class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 outline-none transition" />
+
+          <input type="text" name="pincode" placeholder="Pincode" required 
+            pattern="[0-9]{6}" title="Enter a valid 6-digit pincode"
+            class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 outline-none transition" />
+        </div>
+
+        <textarea name="message" rows="4" maxlength="300" placeholder="Your Message (Max 300 characters)" required 
+          class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 outline-none transition"></textarea>
+
+        <button type="submit" class="w-full md:w-auto px-8 py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-full font-semibold text-lg transition">
+          Send Message
+        </button>
+      </form>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="text-center py-6 bg-gray-900 text-gray-300">
+    © 2025 AgriSaarthi | Empowering Farmers with AI 🌾
+  </footer>
+
+  <!-- POPUP BOX -->
+  <div id="popup" class="popup-overlay">
+    <div class="popup-box" id="popupBox">
+      <h3 id="popupTitle"></h3>
+      <p id="popupMessage"></p>
+      <button onclick="closePopup()" class="mt-4 px-6 py-2 bg-emerald-600 text-white rounded-full hover:bg-emerald-700 transition">OK</button>
+    </div>
+  </div>
+
+  <script>
+    function showPopup(title, message, type) {
+      const popup = document.getElementById('popup');
+      const popupTitle = document.getElementById('popupTitle');
+      const popupMessage = document.getElementById('popupMessage');
+      popupTitle.textContent = title;
+      popupMessage.textContent = message;
+      popupTitle.style.color = type === 'error' ? 'red' : 'green';
+      popup.style.display = 'flex';
+    }
+
+    function closePopup() {
+      document.getElementById('popup').style.display = 'none';
+    }
+
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
+      const email = document.querySelector("input[name='_replyto']").value.trim();
+      const phone = document.querySelector("input[name='phone']").value.trim();
+
+      const usedEmails = JSON.parse(localStorage.getItem("usedEmails")) || [];
+      const usedPhones = JSON.parse(localStorage.getItem("usedPhones")) || [];
+
+      if (usedEmails.includes(email)) {
+        event.preventDefault();
+        showPopup("Duplicate Email ❌", "This email has already been used before!", "error");
+        return;
+      }
+
+      if (usedPhones.includes(phone)) {
+        event.preventDefault();
+        showPopup("Duplicate Number ⚠️", "This mobile number has already been used!", "error");
+        return;
+      }
+
+      usedEmails.push(email);
+      usedPhones.push(phone);
+      localStorage.setItem("usedEmails", JSON.stringify(usedEmails));
+      localStorage.setItem("usedPhones", JSON.stringify(usedPhones));
+
+      showPopup("Success ✅", "Your message has been sent successfully!", "success");
+    });
+  </script>
+
+</body>
+</html>
