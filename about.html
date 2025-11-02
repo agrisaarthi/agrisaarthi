@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>About — AgriSaarthi</title>
-  <link rel="icon" href="images/logo.png" type="image/png">
+  <link rel="icon" href="images/LOGO.png" type="image/png">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     body {
@@ -12,6 +12,7 @@
       background: linear-gradient(to bottom right, #f9fafb, #e0f7fa);
       color: #1f2937;
     }
+
     header {
       background: rgba(0, 0, 0, 0.75);
       backdrop-filter: blur(8px);
@@ -27,25 +28,66 @@
       color: #22d3ee;
       font-weight: 600;
     }
+
+    /* Hamburger Menu */
+    .menu-toggle {
+      display: none;
+      font-size: 1.8rem;
+      color: white;
+      cursor: pointer;
+    }
+    nav ul {
+      display: flex;
+      gap: 1.5rem;
+    }
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+        flex-direction: column;
+        background: rgba(0, 0, 0, 0.9);
+        position: absolute;
+        top: 60px;
+        right: 15px;
+        width: 200px;
+        padding: 1rem;
+        border-radius: 10px;
+        text-align: left;
+      }
+      nav ul.active {
+        display: flex;
+      }
+      .menu-toggle {
+        display: block;
+      }
+      nav ul li a {
+        padding: 10px 0;
+        display: block;
+      }
+    }
   </style>
 </head>
 <body>
 
   <!-- HEADER -->
   <header class="fixed top-0 left-0 w-full z-50 shadow-md">
-    <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-3">
-      <!-- Logo + Name -->
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-3 relative">
+      <!-- Logo -->
       <a href="index.html" class="flex items-center gap-3">
-        <img src="images/logo.png" alt="AgriSaarthi logo" class="w-10 h-10 object-contain">
+        <img src="images/LOGO.png" alt="AgriSaarthi logo" class="w-10 h-10 object-contain">
         <h1 class="text-2xl font-bold text-white">AgriSaarthi</h1>
       </a>
 
+      <!-- Menu Button (Mobile) -->
+      <div class="menu-toggle absolute right-4 top-3">&#9776;</div>
+
       <!-- Navbar -->
-      <nav class="flex gap-6 text-sm font-medium">
-        <a href="index.html" class="hover:text-cyan-300">Home</a>
-        <a href="about.html" class="active">About Us</a>
-        <a href="products.html" class="hover:text-cyan-300">Products</a>
-        <a href="contact.html" class="hover:text-cyan-300">Contact Us</a>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html" class="active">About Us</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
       </nav>
     </div>
   </header>
@@ -89,5 +131,13 @@
     © 2025 AgriSaarthi | Empowering Farmers with AI 🌾
   </footer>
 
+  <script>
+    // Mobile Menu Toggle
+    const toggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('nav ul');
+    toggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+  </script>
 </body>
 </html>
