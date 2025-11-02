@@ -219,24 +219,8 @@ body {
   border-radius: 15px;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
-/* Navbar Responsive Fix */
-.navbar {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 20px;
-}
 
-.navbar img {
-  max-height: 50px;
-}
 
-.nav-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
 /* Footer */
 footer {
   background: #1e293b;
@@ -246,7 +230,3 @@ footer {
   font-size: 14px;
   margin-top: 50px;
 }
-
-
-
-
