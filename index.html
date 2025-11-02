@@ -1,64 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AgriSaarthi — Smart Farming for India</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AgriSaarthi — Smart Farming Made Simple</title>
+  <link rel="icon" href="images/LOGO.png" type="image/png">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     body {
       font-family: 'Poppins', sans-serif;
       background-color: #f9fafb;
+      scroll-behavior: smooth;
     }
-
     header {
-      background: rgba(0, 0, 0, 0.85);
+      background: rgba(0, 0, 0, 0.75);
       backdrop-filter: blur(8px);
     }
-
     header a {
       color: white;
       transition: 0.3s;
     }
-
     header a:hover {
       color: #22d3ee;
     }
-
-    .menu-toggle {
-      display: none;
-      font-size: 1.8rem;
-      color: white;
-      cursor: pointer;
-    }
-
-    nav ul {
-      display: flex;
-      gap: 1.5rem;
-    }
-
-    @media (max-width: 768px) {
-      nav ul {
-        display: none;
-        flex-direction: column;
-        background: rgba(0, 0, 0, 0.9);
-        position: absolute;
-        top: 60px;
-        right: 15px;
-        width: 200px;
-        padding: 1rem;
-        border-radius: 10px;
-      }
-
-      nav ul.active {
-        display: flex;
-      }
-
-      .menu-toggle {
-        display: block;
-      }
-    }
-
     .hero video {
       position: absolute;
       top: 0;
@@ -69,6 +33,10 @@
       z-index: -1;
       opacity: 0.9;
     }
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
   </style>
 </head>
 <body class="text-gray-900">
@@ -76,90 +44,107 @@
   <!-- HEADER -->
   <header class="fixed top-0 left-0 w-full z-50 shadow-md">
     <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-3 relative">
-      
-      <!-- LOGO + NAME -->
-      <div class="flex items-center gap-3">
-        <img src="images/LOGO.png" alt="AgriSaarthi Logo" class="w-10 h-10 rounded-full shadow-md">
+      <!-- Logo + Name -->
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="images/LOGO.png" alt="AgriSaarthi logo" class="w-10 h-10 object-contain">
         <h1 class="text-2xl font-bold text-white">AgriSaarthi</h1>
-      </div>
+      </a>
 
-      <!-- NAVIGATION -->
-      <nav>
-        <div class="menu-toggle absolute right-4 top-3">&#9776;</div>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="products.html">Products</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
-        </ul>
+      <!-- Navbar -->
+      <nav class="flex gap-6 text-sm font-medium relative">
+        <a href="index.html" class="text-cyan-300">Home</a>
+        <a href="about.html">About us</a>
+        <a href="#products">Products</a>
+        <a href="contact.html">Contact Us</a>
       </nav>
     </div>
   </header>
 
   <!-- HERO SECTION -->
-  <section class="hero relative h-[90vh] flex items-center justify-center text-center text-white">
-    <video autoplay muted loop playsinline>
-      <source src="videos/Ai Smart Rotavator.mp4" type="video/mp4">
+  <section class="hero relative h-[90vh] flex flex-col items-center justify-center text-center text-white">
+    <video id="heroVideo" autoplay muted playsinline>
       <source src="videos/Hand Rotavator.mp4" type="video/mp4">
+      <source src="videos/AI Smart Rotavator.mp4" type="video/mp4">
     </video>
-    <div class="bg-black/60 absolute inset-0"></div>
+    <div class="bg-black/50 absolute inset-0"></div>
 
     <div class="z-10 px-4">
-      <h2 class="text-5xl md:text-6xl font-bold mb-4">Welcome to AgriSaarthi</h2>
+      <h2 class="text-4xl md:text-5xl font-bold mb-4">Affordable AI-powered Smart Rotavators</h2>
       <p class="text-lg md:text-xl mb-6 max-w-2xl mx-auto">
-        Revolutionizing Indian agriculture with AI-powered, affordable, and farmer-friendly smart equipment.
+        Reduce fuel, increase yield — durable and cost-effective solutions under ₹2,00,000 for Indian farmers.
       </p>
-      <a href="products.html" class="bg-cyan-600 hover:bg-cyan-700 px-8 py-3 rounded-full text-white text-lg transition">Explore Products</a>
-    </div>
-  </section>
-
-  <!-- ABOUT SECTION -->
-  <section class="py-16 bg-gradient-to-b from-white to-gray-100">
-    <div class="max-w-6xl mx-auto text-center px-6">
-      <h3 class="text-3xl font-bold mb-4">Empowering Farmers with Innovation</h3>
-      <p class="text-gray-700 max-w-3xl mx-auto mb-10">
-        AgriSaarthi combines artificial intelligence, data insights, and durable engineering to help farmers save time, reduce costs, and increase productivity. 
-        Our AI Smart Rotavator and Hand Rotavator are built for efficiency and sustainability in Indian conditions.
-      </p>
-    </div>
-  </section>
-
-  <!-- PRODUCT HIGHLIGHT SECTION -->
-  <section class="py-16 bg-white">
-    <div class="max-w-6xl mx-auto text-center px-6">
-      <h3 class="text-3xl font-bold mb-8">Our Key Innovations</h3>
-      <div class="grid md:grid-cols-2 gap-8">
-        <div class="p-6 bg-gray-50 rounded-xl shadow hover:shadow-md transition">
-          <img src="images/AI Smart Rotavator.jpg" class="rounded-lg mb-4 w-full h-64 object-cover">
-          <h4 class="text-xl font-semibold mb-2 text-cyan-700">AI Smart Rotavator</h4>
-          <p>AI-enabled soil tiller controllable via app — boosting efficiency and precision farming.</p>
-          <a href="ai-smart-rotavator.html" class="inline-block mt-4 text-cyan-600 hover:underline">View Details →</a>
-        </div>
-
-        <div class="p-6 bg-gray-50 rounded-xl shadow hover:shadow-md transition">
-          <img src="images/Hand Rotavator.jpg" class="rounded-lg mb-4 w-full h-64 object-cover">
-          <h4 class="text-xl font-semibold mb-2 text-cyan-700">Hand Rotavator</h4>
-          <p>Manual and durable farming tool designed for small-scale and eco-friendly cultivation.</p>
-          <a href="hand-rotavator.html" class="inline-block mt-4 text-cyan-600 hover:underline">View Details →</a>
-        </div>
+      <div class="flex gap-4 justify-center">
+        <a href="#products" class="bg-cyan-600 hover:bg-cyan-700 px-6 py-3 rounded-full text-white text-lg transition">See Products</a>
+        <a href="contact.html" class="bg-emerald-600 hover:bg-emerald-700 px-6 py-3 rounded-full text-white text-lg transition">Contact Sales</a>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer class="text-center py-5 bg-gray-900 text-gray-300">
-    © 2025 AgriSaarthi | Built with ❤️ for Indian Farmers
-  </footer>
+  <!-- OUR PRODUCTS -->
+  <section id="products" class="py-16 bg-gradient-to-b from-white to-gray-100">
+    <div class="max-w-6xl mx-auto text-center px-6">
+      <h3 class="text-3xl font-bold mb-10">Our Products</h3>
+      <div class="grid md:grid-cols-2 gap-10">
 
-  <script>
-    // Mobile menu toggle
-    const menuToggle = document.querySelector('.menu-toggle');
-    const menu = document.querySelector('nav ul');
+        <!-- Hand Rotavator -->
+        <div class="product-card bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition cursor-pointer" onclick="window.location.href='hand-rotavator.html'">
+          <img src="images/Hand Rotavator.jpg" alt="Hand Rotavator" class="w-full h-60 object-cover rounded-lg mb-4">
+          <h4 class="text-2xl font-semibold text-gray-800 mb-2">Hand Rotavator</h4>
+          <p class="text-gray-600 mb-4">Eco-friendly and manual — perfect for small-scale farmers who want durability and simplicity.</p>
+          <span class="inline-block bg-emerald-600 text-white px-4 py-2 rounded-full text-sm font-medium">View Details</span>
+        </div>
 
-    menuToggle.addEventListener('click', () => {
-      menu.classList.toggle('active');
-    });
-  </script>
-</body>
-</html>
+        <!-- AI Smart Rotavator -->
+        <div class="product-card bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition cursor-pointer" onclick="window.location.href='ai-smart-rotavator.html'">
+          <img src="images/AI Smart Rotavator.jpg" alt="AI Smart Rotavator" class="w-full h-60 object-cover rounded-lg mb-4">
+          <h4 class="text-2xl font-semibold text-gray-800 mb-2">AI Smart Rotavator</h4>
+          <p class="text-gray-600 mb-4">AI-controlled precision rotavator — saves fuel and increases efficiency with mobile connectivity & wireless remote control.</p>
+          <span class="inline-block bg-cyan-600 text-white px-4 py-2 rounded-full text-sm font-medium">View Details</span>
+        </div>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY AGRISAARTHI -->
+  <section class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto text-center px-6">
+      <h3 class="text-3xl font-bold mb-10">Why AgriSaarthi?</h3>
+      <div class="grid md:grid-cols-3 gap-8">
+
+        <div class="p-6 bg-gray-50 rounded-xl shadow hover:shadow-lg transition">
+          <h4 class="text-xl font-semibold text-emerald-600 mb-3">Innovation</h4>
+          <p class="text-gray-600">We blend AI technology with farming tools to make agriculture smarter and easier.</p>
+        </div>
+
+        <div class="p-6 bg-gray-50 rounded-xl shadow hover:shadow-lg transition">
+          <h4 class="text-xl font-semibold text-cyan-600 mb-3">Affordability</h4>
+          <p class="text-gray-600">High-tech equipment at a farmer-friendly price, ensuring accessibility for everyone.</p>
+        </div>
+
+        <div class="p-6 bg-gray-50 rounded-xl shadow hover:shadow-lg transition">
+          <h4 class="text-xl font-semibold text-yellow-600 mb-3">Sustainability</h4>
+          <p class="text-gray-600">Eco-conscious design that minimizes fuel consumption and promotes green farming.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- GET IN TOUCH -->
+<section class="py-16 bg-gradient-to-b from-gray-100 to-white text-center">
+  <div class="max-w-4xl mx-auto px-6">
+    <h3 class="text-3xl font-bold mb-6">Get in Touch</h3>
+    <p class="text-gray-700 mb-6 text-lg">
+      Have any questions or want to know more about our products?  
+      We’d love to hear from you — hum hamesha aapki madad ke liye ready hain! 🌾
+    </p>
+    <a href="contact.html" class="inline-block bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-3 rounded-full font-semibold text-lg transition">
+      Contact Us
+    </a>
+  </div>
+</section>
+<!-- FOOTER -->
+<footer class="bg-gray-900 text-gray-400 py-6 text-center text-sm">
+  © 2025 AgriSaarthi | Built with ❤️ for Indian Farmers
+</footer>
