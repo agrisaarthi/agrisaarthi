@@ -219,6 +219,65 @@ body {
   border-radius: 15px;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
+/* Navbar Responsive Fix */
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+
+.navbar img {
+  max-height: 50px;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+/* ---------- Mobile Compatibility Fix for Header ---------- */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  header img {
+    max-height: 60px;
+    margin-bottom: 8px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    gap: 6px;
+  }
+
+  nav ul li {
+    display: block;
+  }
+
+  nav ul li a {
+    display: inline-block;
+    padding: 8px 12px;
+    font-size: 15px;
+  }
+}
+
+/* ---------- Small Phone Screens ---------- */
+@media (max-width: 480px) {
+  header img {
+    max-height: 50px;
+  }
+
+  nav ul li a {
+    font-size: 14px;
+  }
+}
 
 /* Footer */
 footer {
@@ -229,3 +288,4 @@ footer {
   font-size: 14px;
   margin-top: 50px;
 }
+
